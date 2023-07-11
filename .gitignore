@@ -52,3 +52,4 @@ dot_files/
 
 # Temp files
 Temp/
+*.json
