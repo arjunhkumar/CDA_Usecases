@@ -67,10 +67,10 @@ public class ValueMain{
 		int i =0;
 		for(CustomerDS custDs : customLoadDS) {
 			if(null != custDSPrev) {
-				custDSPrev.exclaim();
+				sum+=custDSPrev.exclaim();
 			}
-			custDs.exclaim();
-			if(i++ % 10 == 0) {
+			sum+=custDs.exclaim();
+			if(i++ % 100 == 0) {
 				custDSPrev = custDs;
 			}
 		}

@@ -58,13 +58,16 @@ public class CustomerDS {
 		blackHole += this.getCustStringDS().getCustGender().hashCode() + random.nextInt();
 		blackHole += this.getCustStringDS().getCustomerID().hashCode() + random.nextInt();
 		blackHole += this.getCustIntDS().getCustomerZ() + random.nextInt();
+		blackHole += this.getCustStringDS().getCustLocation().hashCode() + random.nextInt();
+		blackHole += this.getCustStringDS().getCustomerDOB().hashCode() + random.nextInt();
+		blackHole += this.getCustIntDS().getCustomerY() + random.nextInt();
 		return blackHole;
 	}
 	
 	
 	public String generateRandomString() {
-		int leftLimit = 48; // numeral '0'
-	    int rightLimit = 122; // letter 'z'
+		int leftLimit = 48; 
+	    int rightLimit = 122; 
 	    int targetStringLength = 10;
 	    Random random = new Random();
 	    return random.ints(leftLimit, rightLimit + 1)
