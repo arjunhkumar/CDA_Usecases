@@ -7,7 +7,7 @@ package in.ac.iitmandi.compl.ds.value;
  * @author arjun
  *
  */
-public class DummyInlineClassDouble {
+public primitive class DummyInlineClassDouble {
 
 	/**
 	 * 

@@ -21,7 +21,7 @@ public class ValueMain{
 	/**
 	 * @param args
 	 */
-	public static List<CustomerDS> customLoadDS;
+	protected static List<CustomerDS> customLoadDS;
 	
 	public static void main(String[] args) {
 		long startTime;
@@ -41,7 +41,7 @@ public class ValueMain{
 	
 	private static void initializeCustomDS() {
 		customLoadDS = new ArrayList<>();
-		for(int i = 0 ; i< 25000; i ++) {
+		for(int i = 0 ; i< 10000; i ++) {
 			customLoadDS.add(new CustomerDS());
 		}
 	}
@@ -86,9 +86,7 @@ public class ValueMain{
 		ValueTransaction transaction = new ValueTransaction();
 		if(null != ds && null != ds.getResults() && ds.getResults().length > 0) {
 			transactionList = new ArrayList<>();
-//			for (int i = 0; i <100;i++) {
 			for(JSONResult transactionData : ds.getResults()) {
-//				JSONResult transactionData = ds.results[i];
 				ValueTransaction valueTransaction = transaction.convertToTransactionObject(transactionData);
 				transactionList.add(valueTransaction);
 			}
