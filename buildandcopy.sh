@@ -1,6 +1,6 @@
 #!/bin/bash
 rm -r target/
-ITER_SIZE=100
+ITER_SIZE=50000
 #export VERSION="NON-PRIMITIVE-$ITER_SIZE"
 export VERSION="PRIMITIVE-$ITER_SIZE"
 mvn clean package
