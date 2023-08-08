@@ -62,19 +62,76 @@ public class ValueMain{
 	}
 	
 	private void performLoadIntensiveOperation(ValueTransaction transaction) {
-		double sum = transaction.getTransactionAmount();
+		ValueTransaction transactionCopy = new ValueTransaction(transaction);
+		double sum = transactionCopy.paymentInfo.transactionAmount;
 		CustomerDS custDSPrev = null;
 		int i =0;
-		for(CustomerDS custDs : customLoadDS) {
-			if(null != custDSPrev) {
-				sum+=custDSPrev.exclaim();
-			}
+		if(customLoadDS.size() > 10) {
+//		for(CustomerDS custDs : customLoadDS) {
+			CustomerDS custDs = customLoadDS.get(0);
 			sum+=custDs.exclaim();
-			if(i++ % 100 == 0) {
-				custDSPrev = custDs;
-			}
+			custDSPrev = custDs;
+			
+			custDs = customLoadDS.get(1);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+			
+			custDs = customLoadDS.get(2);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+			
+			custDs = customLoadDS.get(3);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+			custDs = customLoadDS.get(4);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+			custDs = customLoadDS.get(5);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+			
+			custDs = customLoadDS.get(6);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+			
+			custDs = customLoadDS.get(7);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+			
+			custDs = customLoadDS.get(8);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+			
+			custDs = customLoadDS.get(9);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+			
+			custDs = customLoadDS.get(10);
+			sum+=custDs.exclaim();
+			sum+=custDSPrev.exclaim();
+			custDSPrev = custDs;
+			
+//		}
 		}
-		System.out.println("Required val: "+sum+transaction.getCustAcctBalance());
+		System.out.println("Required val: "+sum+transactionCopy.paymentInfo.custAccountBalance);
 		
 	}
 

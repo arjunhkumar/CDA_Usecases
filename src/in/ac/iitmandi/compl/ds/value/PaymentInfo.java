@@ -7,14 +7,14 @@ package in.ac.iitmandi.compl.ds.value;
  * @author arjun
  *
  */
-public primitive class PaymentInfo {
+public class PaymentInfo {
 
-	private final double transactionAmount;
-	private final float transactionFeeRate;
-	private final boolean transactionStatus;
-	private double dummyField1;
-	private double dummyField2;
-	private double dummyField3;
+	public final double transactionAmount;
+	public final float transactionFeeRate;
+	public final boolean transactionStatus;
+	public double dummyField1;
+	public double dummyField2;
+	public double dummyField3;
 	
 	/**
 	 * 
@@ -104,6 +104,10 @@ public primitive class PaymentInfo {
 	 */
 	public double getDummyField3() {
 		return dummyField3;
+	}
+
+	public PaymentInfo createCopy() {
+		return new PaymentInfo(this.transactionAmount, this.getTransactionFeeRate(), this.transactionStatus);
 	}
 	
 	

@@ -12,12 +12,12 @@ import in.ac.iitmandi.compl.ds.JSONResult;
  */
 public class ValueTransaction {
 
-	private String transactionID;
-	private CustomerDetails custDetails;
-	private TransactionInfo paymentInfo;
-	private PaymentInfo feeInfo;
-	private DummyInlineClassInt dummyField0;
-	private DummyInlineClassDouble dummyField1;
+	public String transactionID;
+	public CustomerDetails custDetails;
+	public TransactionInfo paymentInfo;
+	public PaymentInfo feeInfo;
+	public DummyInlineClassInt dummyField0;
+	public DummyInlineClassDouble dummyField1;
 	
 	
 	/**
@@ -31,6 +31,21 @@ public class ValueTransaction {
 		this.dummyField0 = new DummyInlineClassInt();
 		this.dummyField1 = new DummyInlineClassDouble();
 	}
+	
+	/**
+	 * @param transactionID
+	 * @param custDetails
+	 * @param transactionStatus
+	 * @param transactionFee
+	 */
+	public ValueTransaction(ValueTransaction transaction) {
+		this.transactionID = transaction.transactionID;
+		this.custDetails = transaction.custDetails;
+		this.paymentInfo = transaction.paymentInfo;
+		this.feeInfo = transaction.feeInfo;
+		this.dummyField0 = new DummyInlineClassInt(4,9,2);
+		this.dummyField1 =  new DummyInlineClassDouble();
+	}
 
 	/**
 	 * @param transactionID
@@ -40,9 +55,9 @@ public class ValueTransaction {
 	 */
 	public ValueTransaction(String transactionID, CustomerDetails custDetails, TransactionInfo transInfo, PaymentInfo payInfo) {
 		this.transactionID = transactionID;
-		this.custDetails = custDetails;
-		this.paymentInfo = transInfo;
-		this.feeInfo = payInfo;
+		this.custDetails = custDetails.createCopy();
+		this.paymentInfo = transInfo.createCopy();
+		this.feeInfo = payInfo.createCopy();
 		this.dummyField0 = new DummyInlineClassInt(4,9,2);
 		this.dummyField1 =  new DummyInlineClassDouble();
 	}

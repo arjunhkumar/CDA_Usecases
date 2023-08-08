@@ -1,19 +1,19 @@
 package in.ac.iitmandi.compl.ds.value;
 
-public primitive class TransactionInfo {
+public class TransactionInfo {
 
 	
-	private final double custAccountBalance;
-	private final double transactionAmount;
-	private double dummyField1;
-	private double dummyField2;
-	private double dummyField3;
-	private double dummyField4;
-	private double dummyField5;
-	private double dummyField6;
-	private double dummyField7;
-	private double dummyField8;
-	private double dummyField9;
+	public final double custAccountBalance;
+	public final double transactionAmount;
+	public double dummyField1;
+	public double dummyField2;
+	public double dummyField3;
+	public double dummyField4;
+	public double dummyField5;
+	public double dummyField6;
+	public double dummyField7;
+	public double dummyField8;
+	public double dummyField9;
 	
 	public TransactionInfo() {
 		this.custAccountBalance = 0d;
@@ -113,5 +113,9 @@ public primitive class TransactionInfo {
 				+ this.dummyField5 + this.dummyField6 + this.dummyField7 + this.dummyField8
 				+ this.dummyField9);
 		return d.intValue();
+	}
+
+	public TransactionInfo createCopy() {
+		return new TransactionInfo(this.custAccountBalance,this.transactionAmount);
 	}
 }

@@ -9,10 +9,10 @@ package in.ac.iitmandi.compl.ds;
  */
 public class CustomerDetails {
 
-	private String CustomerID;
-	private String CustomerDOB;
-	private String CustGender;
-	private String CustLocation;
+	public String CustomerID;
+	public String CustomerDOB;
+	public String CustGender;
+	public String CustLocation;
 	
 	/**
 	 * 
@@ -97,6 +97,11 @@ public class CustomerDetails {
 	 */
 	public void setCustLocation(String custLocation) {
 		CustLocation = custLocation;
+	}
+
+
+	public CustomerDetails createCopy() {
+		return new CustomerDetails(this.CustomerID, this.CustomerDOB, this.CustGender, this.CustLocation);
 	}
 
 	
