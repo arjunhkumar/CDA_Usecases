@@ -41,7 +41,7 @@ public class ValueMain{
 	
 	private static void initializeCustomDS() {
 		customLoadDS = new ArrayList<>();
-		for(int i = 0 ; i< 50000; i ++) {
+		for(int i = 0 ; i< 1000; i ++) {
 			customLoadDS.add(new CustomerDS());
 		}
 	}
@@ -49,7 +49,7 @@ public class ValueMain{
 	public long executeAnalysis(Dataset ds) {
 		long startTime;
 		long finishTime;
-		List<ValueTransaction> valueList = convertToTransaction(ds);
+		List<ValueTransaction> valueList = convertToTransaction(ds); //valueList.size()
 		startTime = System.currentTimeMillis();
 		double sum =0;
 		for(ValueTransaction transaction :  valueList) {
@@ -62,7 +62,7 @@ public class ValueMain{
 	}
 	
 	private void performLoadIntensiveOperation(ValueTransaction transaction) {
-		double sum = transaction.getTransactionAmount();
+		double sum = transaction.getPaymentInfo().getTransactionAmount();
 		CustomerDS custDSPrev = null;
 		int i =0;
 		for(CustomerDS custDs : customLoadDS) {
@@ -74,7 +74,7 @@ public class ValueMain{
 				custDSPrev = custDs;
 			}
 		}
-		System.out.println("Required val: "+sum+transaction.getCustAcctBalance());
+		System.out.println("Required val: "+sum+transaction.getPaymentInfo().getCustAccountBalance());
 		
 	}
 

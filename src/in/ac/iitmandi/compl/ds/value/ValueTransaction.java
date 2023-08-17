@@ -47,17 +47,17 @@ public class ValueTransaction {
 		this.dummyField1 =  new DummyInlineClassDouble();
 	}
 	
-	public double getTransactionAmount() {
-		return this.getPaymentInfo().getTransactionAmount();
-	}
-
-	public double getCustAcctBalance() {
-		return this.getPaymentInfo().getCustAccountBalance();
-	}
-
-	public boolean getTransactionStatus() {
-		return this.getFeeInfo().isTransactionStatus();
-	}
+//	public double getTransactionAmount() {
+//		return this.getPaymentInfo().getTransactionAmount();
+//	}
+//
+//	public double getCustAcctBalance() {
+//		return this.getPaymentInfo().getCustAccountBalance();
+//	}
+//
+//	public boolean getTransactionStatus() {
+//		return this.getFeeInfo().isTransactionStatus();
+//	}
 
 	/**
 	 * @return the transactionID
